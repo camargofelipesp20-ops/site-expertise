@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import './final-tuning.css';
+import './studies-no-image.css';
 import Logo from './components/Logo';
 import MobileMenu from './components/MobileMenu';
-import StudiesImageFix from './components/StudiesImageFix';
 
 export const metadata: Metadata = {
   metadataBase:new URL('https://expertise-eng.com.br'),
@@ -16,6 +16,5 @@ export const metadata: Metadata = {
 export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="pt-BR"><body>
 <header className="header"><div className="container headerInner"><Link href="/" className="brandLink"><Logo/></Link><nav className="desktopNav"><Link href="/#solucoes">Soluções</Link><Link href="/#como-atuamos">Como atuamos</Link><Link href="/#sobre">Sobre</Link><Link href="/#contato">Contato</Link><a className="outlineBtn" href="https://wa.me/5519997988672" target="_blank" rel="noreferrer">Falar pelo WhatsApp</a></nav><MobileMenu/></div></header>
 {children}
-<StudiesImageFix/>
 <footer className="footer"><div className="container footerInner"><Logo/><p>Engenharia elétrica para operações mais seguras e eficientes.</p><div className="footerMeta"><span>⌖ Campinas - SP</span><span>◫ Atendimento em todo o Estado de SP</span></div><div className="footerSocial"><span>in</span><span>◎</span></div></div><div className="container footerBottom"><span>© 2026 Expertise Engenharia. Todos os direitos reservados.</span><nav><Link href="/#solucoes">Soluções</Link><Link href="/#sobre">Sobre</Link><Link href="/#contato">Contato</Link></nav></div></footer>
 </body></html>}
