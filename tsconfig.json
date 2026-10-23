@@ -16,5 +16,15 @@
     "plugins": [{ "name": "next" }]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "app/assets/hq",
+    "app/assets/hq60",
+    "app/assets/hq25",
+    "app/assets/home.ts",
+    "app/assets/rental.ts",
+    "app/assets/monitoring.ts",
+    "app/assets/studies.ts",
+    "app/assets/installations.ts"
+  ]
 }
