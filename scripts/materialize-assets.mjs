@@ -9,7 +9,7 @@ const outputDir = path.join(root, 'public', 'assets');
 fs.mkdirSync(outputDir, { recursive: true });
 
 const assets = {
-  'home-hero.webp': ['home0.ts', 'home1.ts'],
+  'home-hero.webp': ['home0.ts'],
   'locacao-hero.webp': ['rental0.ts', 'rental1.ts'],
   'monitoramento-hero.webp': ['monitoring0.ts', 'monitoring1.ts'],
   'estudos-hero.webp': ['studies0.ts', 'studies1.ts'],
