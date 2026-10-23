@@ -7,7 +7,6 @@
   },
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/materialize-assets.mjs",
     "build": "next build",
     "start": "next start"
   },
