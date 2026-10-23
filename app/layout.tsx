@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
-import './visuals.css';
 import Logo from './components/Logo';
 import MobileMenu from './components/MobileMenu';
 
@@ -20,6 +19,6 @@ export default function RootLayout({children}:{children:React.ReactNode}){
       <MobileMenu/>
     </div></header>
     {children}
-    <footer className="footer"><div className="container footerInner"><Logo/><p>Engenharia elétrica para operações mais seguras, eficientes e confiáveis.</p><div><strong>Campinas - SP</strong><span>Atendimento em todo o Estado de São Paulo.</span></div></div><div className="container footerBottom"><span>© 2026 Expertise Engenharia.</span><nav><Link href="/#solucoes">Soluções</Link><Link href="/#sobre">Sobre</Link><Link href="/#contato">Contato</Link></nav></div></footer>
+    <footer className="footer"><div className="container footerInner"><Logo/><p>Engenharia elétrica para operações mais seguras e eficientes.</p><div><strong>Campinas - SP</strong><span>Atendimento em todo o Estado de SP</span></div></div><div className="container footerBottom"><span>© 2026 Expertise Engenharia. Todos os direitos reservados.</span><nav><Link href="/#solucoes">Soluções</Link><Link href="/#sobre">Sobre</Link><Link href="/#contato">Contato</Link></nav></div></footer>
   </body></html>
 }
