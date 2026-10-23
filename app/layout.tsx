@@ -1,39 +1,24 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
+import Logo from './components/Logo';
+import MobileMenu from './components/MobileMenu';
 
 export const metadata: Metadata = {
-  title: 'Expertise Engenharia',
-  description: 'Soluções em engenharia elétrica, qualidade de energia, locação de equipamentos, estudos, instalações e manutenções.'
+  metadataBase:new URL('https://expertise-eng.com.br'),
+  title:{default:'Expertise Engenharia | Soluções em Engenharia Elétrica',template:'%s | Expertise Engenharia'},
+  description:'Engenharia elétrica, qualidade de energia, locação de equipamentos, estudos, instalações e manutenções para indústrias, condomínios e profissionais do setor.',
+  openGraph:{title:'Expertise Engenharia',description:'Soluções em engenharia elétrica com foco em segurança, eficiência e confiabilidade.',type:'website',locale:'pt_BR'}
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="pt-BR">
-      <body>
-        <header className="header">
-          <div className="container headerInner">
-            <Link className="brand" href="/" aria-label="Expertise Engenharia">
-              <span className="brandMark"><span></span></span>
-              <span><strong>EXPERTISE</strong><small>ENGENHARIA</small></span>
-            </Link>
-            <nav className="nav">
-              <Link href="/#solucoes">Soluções</Link>
-              <Link href="/#sobre">Sobre</Link>
-              <Link href="/#contato">Contato</Link>
-              <a className="outlineBtn" href="https://wa.me/5519997988672" target="_blank" rel="noreferrer">WhatsApp</a>
-            </nav>
-          </div>
-        </header>
-        {children}
-        <footer className="footer">
-          <div className="container footerGrid">
-            <div className="brand footerBrand"><span className="brandMark"><span></span></span><span><strong>EXPERTISE</strong><small>ENGENHARIA</small></span></div>
-            <p>Engenharia elétrica com profundidade técnica, foco em segurança e resultado.</p>
-            <p>Campinas - SP<br/>Atendimento em todo o Estado de São Paulo.</p>
-          </div>
-        </footer>
-      </body>
-    </html>
-  );
+export default function RootLayout({children}:{children:React.ReactNode}){
+  return <html lang="pt-BR"><body>
+    <header className="header"><div className="container headerInner">
+      <Link href="/" className="brandLink"><Logo/></Link>
+      <nav className="desktopNav"><Link href="/#solucoes">Soluções</Link><Link href="/#como-atuamos">Como atuamos</Link><Link href="/#sobre">Sobre</Link><Link href="/#contato">Contato</Link><a className="outlineBtn" href="https://wa.me/5519997988672" target="_blank" rel="noreferrer">Falar pelo WhatsApp</a></nav>
+      <MobileMenu/>
+    </div></header>
+    {children}
+    <footer className="footer"><div className="container footerInner"><Logo/><p>Engenharia elétrica para operações mais seguras, eficientes e confiáveis.</p><div><strong>Campinas - SP</strong><span>Atendimento em todo o Estado de São Paulo.</span></div></div><div className="container footerBottom"><span>© 2026 Expertise Engenharia.</span><nav><Link href="/#solucoes">Soluções</Link><Link href="/#sobre">Sobre</Link><Link href="/#contato">Contato</Link></nav></div></footer>
+  </body></html>
 }
