@@ -21,7 +21,7 @@ const chunks: Record<Kind,string[]> = {
 };
 
 function extractBase64(text:string){
-  const match=text.match(/export default ['"]([A-Za-z0-9+/=]+)['"]/s);
+  const match=text.match(/export default ['"]([A-Za-z0-9+/=]+)['"]/);
   return match?.[1] ?? '';
 }
 
