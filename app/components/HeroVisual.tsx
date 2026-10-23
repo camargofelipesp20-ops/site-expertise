@@ -13,15 +13,15 @@ const labels: Record<Kind,string> = {
 };
 
 const chunks: Record<Kind,string[]> = {
-  home:['home0.txt','home1.txt'],
-  rental:['rental0.txt','rental1.txt'],
+  home:['home-hq-0.txt','home-hq-1.txt','home-hq-2.txt','home-hq-3.txt','home-hq-4.txt','home-hq-5.txt'],
+  rental:['rental-hq-0.txt','rental-hq-1.txt','rental-hq-2.txt','rental-hq-3.txt','rental-hq-4.txt','rental-hq-5.txt'],
   monitoring:['monitoring0.txt','monitoring1.txt'],
-  studies:['studies0.txt','studies1.txt'],
+  studies:['studies-hq-0.txt','studies-hq-1.txt','studies-hq-2.txt','studies-hq-3.txt','studies-hq-4.txt','studies-hq-5.txt'],
   installations:['installations0.txt','installations1.txt']
 };
 
 function extractBase64(text:string){
-  const match=text.match(/export default ['"]([A-Za-z0-9+/=]+)['"]/);
+  const match=text.match(/export default ['\"]([A-Za-z0-9+/=]+)['\"]/);
   return match?.[1] ?? '';
 }
 
@@ -31,16 +31,19 @@ export default function HeroVisual({kind='home'}:{kind?:Kind}){
   useEffect(()=>{
     let active=true;
     setSrc('');
-    Promise.all(chunks[kind].map(file=>fetch(`/assets/${file}`).then(r=>{
-      if(!r.ok) throw new Error(`Falha ao carregar ${file}`);
-      return r.text();
-    })))
+
+    Promise.all(chunks[kind].map(async file=>{
+      const response=await fetch(`/assets/${file}`);
+      if(!response.ok) throw new Error(`Falha ao carregar ${file}`);
+      const part=extractBase64(await response.text());
+      if(!part) throw new Error(`Bloco inválido: ${file}`);
+      return part;
+    }))
       .then(parts=>{
-        if(!active) return;
-        const base64=parts.map(extractBase64).join('');
-        if(base64) setSrc(`data:image/webp;base64,${base64}`);
+        if(active) setSrc(`data:image/webp;base64,${parts.join('')}`);
       })
       .catch(()=>{ if(active) setSrc(''); });
+
     return ()=>{active=false};
   },[kind]);
 
