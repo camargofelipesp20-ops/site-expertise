@@ -1,12 +1,12 @@
 export default function HeroVisual({kind='home'}:{kind?:'home'|'rental'|'monitoring'|'studies'|'installations'}){
-  const labels={home:'QUALIDADE DE ENERGIA',rental:'ANALISADOR DE ENERGIA',monitoring:'MONITORAMENTO',studies:'ESTUDOS ELÉTRICOS',installations:'INSTALAÇÕES E MANUTENÇÃO'};
+  const labels={home:'ENGENHARIA EM CAMPO',rental:'ANALISADOR DE ENERGIA',monitoring:'MONITORAMENTO',studies:'ESTUDOS ELÉTRICOS',installations:'INSTALAÇÕES E MANUTENÇÃO'};
   return <div className={`techVisual ${kind}`} aria-label={labels[kind]}>
     <div className="visualGrid"></div>
-    <div className="device">
-      <div className="deviceTop"><i></i><i></i><i></i></div>
-      <div className="screen"><svg viewBox="0 0 420 180" role="img" aria-label="Forma de onda elétrica"><path className="gridLine" d="M0 45h420M0 90h420M0 135h420M70 0v180M140 0v180M210 0v180M280 0v180M350 0v180"/><path className="waveA" d="M0 96 C25 96 28 60 45 60 S68 130 88 130 S110 38 135 38 S160 112 183 112 S205 72 228 72 S250 104 274 104 S300 55 326 55 S350 119 375 119 S398 82 420 82"/><path className="waveB" d="M0 113 C23 113 35 102 51 102 S72 72 91 72 S112 121 132 121 S156 92 176 92 S195 62 218 62 S245 126 268 126 S292 86 315 86 S338 106 360 106 S390 76 420 76"/></svg></div>
-      <div className="deviceBottom"><span></span><span></span><span></span><span></span></div>
-    </div>
+    {kind==='rental'&&<div className="rentalDevice"><div className="cables"><i></i><i></i><i></i><i></i></div><div className="rentalScreen"><svg viewBox="0 0 360 150"><path className="gridLine" d="M0 37h360M0 75h360M0 113h360M60 0v150M120 0v150M180 0v150M240 0v150M300 0v150"/><path className="waveA" d="M0 80 C25 80 28 45 48 45 S72 118 94 118 S118 32 142 32 S168 102 194 102 S220 63 246 63 S272 101 300 101 S330 65 360 65"/></svg></div><div className="keys"><b></b><b></b><b></b><b></b></div></div>}
+    {kind==='monitoring'&&<div className="laptop"><div className="laptopScreen"><div className="dashHead"><b>Qualidade de energia</b><span></span></div><div className="dashGrid"><div><svg viewBox="0 0 260 70"><path className="waveA" d="M0 38 C20 15 34 55 54 30 S88 55 108 30 S142 55 165 27 S205 58 230 30 S250 33 260 28"/><path className="waveB" d="M0 50 C25 50 35 25 55 42 S90 25 112 45 S150 25 176 43 S210 27 238 42 S250 39 260 41"/></svg></div><aside><strong>220,5 V</strong><strong>125,8 A</strong><strong>0,92 FP</strong></aside></div></div><div className="laptopBase"></div></div>}
+    {kind==='studies'&&<div className="studyScene"><div className="studyBoard"><span className="node n1"></span><span className="node n2"></span><span className="node n3"></span><i className="line l1"></i><i className="line l2"></i><svg viewBox="0 0 320 120"><path className="waveA" d="M0 66 C25 66 30 28 52 28 S78 98 105 98 S132 22 158 22 S187 88 215 88 S245 50 270 50 S300 75 320 75"/></svg></div><div className="studySheet"><b></b><span></span><span></span><span></span></div></div>}
+    {kind==='installations'&&<div className="panelScene"><div className="cabinet"><div className="rail"><i></i><i></i><i></i></div><div className="rail"><i></i><i></i><i></i></div><div className="rail"><i></i><i></i><i></i></div></div><div className="thermal"><span></span><b></b><i></i></div></div>}
+    {kind==='home'&&<div className="fieldScene"><div className="panelMini"><i></i><i></i><i></i><span></span></div><div className="person"><b></b><span></span></div><div className="handDevice"><svg viewBox="0 0 220 100"><path className="waveA" d="M0 56 C18 56 22 25 38 25 S58 82 77 82 S98 20 119 20 S143 73 163 73 S188 42 220 42"/></svg></div></div>}
     <div className="visualTag"><span></span>{labels[kind]}</div>
   </div>
 }
