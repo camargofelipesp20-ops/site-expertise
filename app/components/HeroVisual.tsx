@@ -1,14 +1,50 @@
-export default function HeroVisual({kind='home'}:{kind?:'home'|'rental'|'monitoring'|'studies'|'installations'}){
-  const labels={home:'Engenharia em campo',rental:'Analisador de energia',monitoring:'Monitoramento e avaliação',studies:'Estudos elétricos',installations:'Instalações e manutenção'};
-  const images={
-    home:'/assets/home-hero.webp',
-    rental:'/assets/locacao-hero.webp',
-    monitoring:'/assets/monitoramento-hero.webp',
-    studies:'/assets/estudos-hero.webp',
-    installations:'/assets/instalacoes-hero.webp'
-  };
-  const positions={home:'center',rental:'center',monitoring:'center',studies:'center',installations:'center'};
-  return <div aria-label={labels[kind]} style={{width:'100%',height:'100%',minHeight:'inherit',overflow:'hidden'}}>
-    <img src={images[kind]} alt={labels[kind]} style={{display:'block',width:'100%',height:'100%',minHeight:'255px',objectFit:'cover',objectPosition:positions[kind]}} />
+'use client';
+
+import { useEffect, useState } from 'react';
+
+type Kind = 'home' | 'rental' | 'monitoring' | 'studies' | 'installations';
+
+const labels: Record<Kind,string> = {
+  home:'Engenharia em campo',
+  rental:'Analisador de energia',
+  monitoring:'Monitoramento e avaliação',
+  studies:'Estudos elétricos',
+  installations:'Instalações e manutenção'
+};
+
+const chunks: Record<Kind,string[]> = {
+  home:['home0.txt','home1.txt'],
+  rental:['rental0.txt','rental1.txt'],
+  monitoring:['monitoring0.txt','monitoring1.txt'],
+  studies:['studies0.txt','studies1.txt'],
+  installations:['installations0.txt','installations1.txt']
+};
+
+function extractBase64(text:string){
+  const match=text.match(/export default ['"]([A-Za-z0-9+/=]+)['"]/s);
+  return match?.[1] ?? '';
+}
+
+export default function HeroVisual({kind='home'}:{kind?:Kind}){
+  const [src,setSrc]=useState('');
+
+  useEffect(()=>{
+    let active=true;
+    setSrc('');
+    Promise.all(chunks[kind].map(file=>fetch(`/assets/${file}`).then(r=>{
+      if(!r.ok) throw new Error(`Falha ao carregar ${file}`);
+      return r.text();
+    })))
+      .then(parts=>{
+        if(!active) return;
+        const base64=parts.map(extractBase64).join('');
+        if(base64) setSrc(`data:image/webp;base64,${base64}`);
+      })
+      .catch(()=>{ if(active) setSrc(''); });
+    return ()=>{active=false};
+  },[kind]);
+
+  return <div className="approvedHero" aria-label={labels[kind]}>
+    {src ? <img src={src} alt={labels[kind]} /> : <div className="approvedHeroPlaceholder" aria-hidden="true" />}
   </div>
 }
