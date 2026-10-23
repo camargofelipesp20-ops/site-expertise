@@ -44,7 +44,7 @@ export default function HeroVisual({kind='home'}:{kind?:Kind}){
     return ()=>{active=false};
   },[kind]);
 
-  return <div className="approvedHero" aria-label={labels[kind]}>
-    {src ? <img src={src} alt={labels[kind]} /> : <div className="approvedHeroPlaceholder" aria-hidden="true" />}
+  return <div aria-label={labels[kind]} style={{width:'100%',height:'100%',minHeight:'inherit',overflow:'hidden'}}>
+    {src ? <img src={src} alt={labels[kind]} style={{display:'block',width:'100%',height:'100%',minHeight:'255px',objectFit:'cover',objectPosition:'center'}} /> : <div aria-hidden="true" style={{width:'100%',height:'100%',minHeight:'255px',background:'#eef2f5'}} />}
   </div>
 }
