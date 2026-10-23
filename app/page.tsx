@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import LeadForm from './components/LeadForm';
+import HeroVisual from './components/HeroVisual';
 
 const services=[
   {n:'01',title:'Locação de Equipamentos',desc:'Analisadores de energia e instrumentos para medições e diagnósticos em campo.',href:'/locacao-de-equipamentos'},
@@ -11,7 +12,7 @@ const services=[
 export default function Home(){return <main>
   <section className="hero homeHero"><div className="container heroGrid">
     <div className="heroCopy"><div className="eyebrow">Soluções em engenharia elétrica</div><h1>Engenharia elétrica para operações mais <span>seguras e eficientes.</span></h1><p>Unimos conhecimento técnico, experiência prática e foco em resultado para apoiar sua operação com soluções em engenharia elétrica.</p><div className="actions"><a className="btn" href="https://wa.me/5519997988672?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Expertise." target="_blank" rel="noreferrer">Falar com um especialista →</a><a className="ghostBtn" href="#solucoes">Conhecer soluções →</a></div></div>
-    <div className="heroMedia"><img src="https://expertise-eng.com.br/wp-content/uploads/2025/09/qualidade-1.png" alt="Engenharia elétrica Expertise"/></div>
+    <div className="heroMedia"><HeroVisual kind="home"/></div>
   </div></section>
 
   <section className="metricStrip"><div className="container metrics"><div><strong>24+</strong><span>anos de atuação</span></div><div><strong>SP</strong><span>atendimento em todo o estado</span></div><div><strong>4</strong><span>frentes de atuação</span></div><div><strong>1</strong><span>parceiro técnico do diagnóstico à execução</span></div></div></section>
@@ -22,7 +23,7 @@ export default function Home(){return <main>
 
   <section className="section soft" id="sobre"><div className="container"><div className="sectionHead centered compact"><div className="eyebrow">Por que Expertise</div><h2>Mais que serviços, um parceiro técnico.</h2></div><div className="valueGrid"><article><h3>Profundidade técnica</h3><p>Experiência sólida em qualidade de energia, eficiência, proteção e instalações elétricas.</p></article><article><h3>Soluções sob medida</h3><p>Cada projeto parte da realidade técnica e operacional do cliente.</p></article><article><h3>Foco em resultado</h3><p>Segurança, confiabilidade e eficiência como critérios de decisão.</p></article></div></div></section>
 
-  <section className="featureBand"><div className="container featureBandInner"><div><div className="eyebrow">Locação de equipamentos</div><h2>Locação de Analisadores de Energia</h2><p>Equipamentos de alta precisão para medições, diagnósticos e estudos em sistemas elétricos, com suporte técnico especializado.</p><Link className="btn" href="/locacao-de-equipamentos">Conhecer a locação →</Link></div><img src="https://expertise-eng.com.br/wp-content/uploads/2025/09/destaque1.png" alt="Analisador de energia disponível para locação"/></div></section>
+  <section className="featureBand"><div className="container featureBandInner"><div><div className="eyebrow">Locação de equipamentos</div><h2>Locação de Analisadores de Energia</h2><p>Equipamentos de alta precisão para medições, diagnósticos e estudos em sistemas elétricos, com suporte técnico especializado.</p><Link className="btn" href="/locacao-de-equipamentos">Conhecer a locação →</Link></div><div className="featureVisual"><HeroVisual kind="rental"/></div></div></section>
 
   <section className="section" id="contato"><div className="container contactGrid"><div className="contactIntro"><div className="eyebrow">Contato</div><h2>Vamos conversar sobre o seu projeto?</h2><p>Conte para nós a sua necessidade. Nossa equipe retorna para entender o cenário e direcionar o próximo passo.</p><a className="whatsappBtn" href="https://wa.me/5519997988672?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20Expertise." target="_blank" rel="noreferrer">Falar pelo WhatsApp →</a><ul><li>Campinas - SP</li><li>Atendimento em todo o Estado de São Paulo</li><li>Atuação fora do estado conforme o projeto</li></ul></div><LeadForm service="um projeto de engenharia elétrica"/></div></section>
 </main>}
