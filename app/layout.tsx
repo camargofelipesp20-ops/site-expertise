@@ -11,14 +11,8 @@ export const metadata: Metadata = {
   openGraph:{title:'Expertise Engenharia',description:'Soluções em engenharia elétrica com foco em segurança, eficiência e confiabilidade.',type:'website',locale:'pt_BR'}
 };
 
-export default function RootLayout({children}:{children:React.ReactNode}){
-  return <html lang="pt-BR"><body>
-    <header className="header"><div className="container headerInner">
-      <Link href="/" className="brandLink"><Logo/></Link>
-      <nav className="desktopNav"><Link href="/#solucoes">Soluções</Link><Link href="/#como-atuamos">Como atuamos</Link><Link href="/#sobre">Sobre</Link><Link href="/#contato">Contato</Link><a className="outlineBtn" href="https://wa.me/5519997988672" target="_blank" rel="noreferrer">Falar pelo WhatsApp</a></nav>
-      <MobileMenu/>
-    </div></header>
-    {children}
-    <footer className="footer"><div className="container footerInner"><Logo/><p>Engenharia elétrica para operações mais seguras e eficientes.</p><div><strong>Campinas - SP</strong><span>Atendimento em todo o Estado de SP</span></div></div><div className="container footerBottom"><span>© 2026 Expertise Engenharia. Todos os direitos reservados.</span><nav><Link href="/#solucoes">Soluções</Link><Link href="/#sobre">Sobre</Link><Link href="/#contato">Contato</Link></nav></div></footer>
-  </body></html>
-}
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="pt-BR"><body>
+<header className="header"><div className="container headerInner"><Link href="/" className="brandLink"><Logo/></Link><nav className="desktopNav"><Link href="/#solucoes">Soluções</Link><Link href="/#como-atuamos">Como atuamos</Link><Link href="/#sobre">Sobre</Link><Link href="/#contato">Contato</Link><a className="outlineBtn" href="https://wa.me/5519997988672" target="_blank" rel="noreferrer">Falar pelo WhatsApp</a></nav><MobileMenu/></div></header>
+{children}
+<footer className="footer"><div className="container footerInner"><Logo/><p>Engenharia elétrica para operações mais seguras e eficientes.</p><div className="footerMeta"><span>⌖ Campinas - SP</span><span>◫ Atendimento em todo o Estado de SP</span></div><div className="footerSocial"><span>in</span><span>◎</span></div></div><div className="container footerBottom"><span>© 2026 Expertise Engenharia. Todos os direitos reservados.</span><nav><Link href="/#solucoes">Soluções</Link><Link href="/#sobre">Sobre</Link><Link href="/#contato">Contato</Link></nav></div></footer>
+</body></html>}
