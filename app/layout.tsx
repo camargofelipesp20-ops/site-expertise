@@ -3,6 +3,7 @@ import Link from 'next/link';
 import './globals.css';
 import './final-tuning.css';
 import './studies-no-image.css';
+import './rental-hero-fix.css';
 import Logo from './components/Logo';
 import MobileMenu from './components/MobileMenu';
 
