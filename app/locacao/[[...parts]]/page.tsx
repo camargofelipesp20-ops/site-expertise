@@ -1,14 +1,15 @@
 import type {Metadata} from 'next';
-import {RentalRoute,equipment} from '../RentalSite';
+import {RentalRoute} from '../RentalSite';
+import {equipmentMeta} from '../equipmentMeta';
 
 export async function generateMetadata({params}:{params:Promise<{parts?:string[]}>}):Promise<Metadata>{
   const {parts=[]}=await params;
   const [catSlug,itemSlug]=parts;
-  const item=equipment.find(x=>x.catSlug===catSlug&&x.slug===itemSlug);
+  const item=equipmentMeta.find(x=>x.catSlug===catSlug&&x.slug===itemSlug);
   if(item){
     return {title:`Locação ${item.brand} ${item.model} | Expertise Engenharia`,description:item.short};
   }
-  const category=equipment.find(x=>x.catSlug===catSlug)?.cat;
+  const category=equipmentMeta.find(x=>x.catSlug===catSlug)?.cat;
   if(category){
     return {title:`Locação de ${category} | Expertise Engenharia`,description:`Equipamentos profissionais para ${category.toLowerCase()}, com suporte técnico e disponibilidade sob consulta.`};
   }
