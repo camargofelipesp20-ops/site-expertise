@@ -1,5 +1,7 @@
 .rentalHighlight{padding:10px 0 11px}.rentalBanner{min-height:145px}.rentalPhoto{height:145px}
 
+.homeServices{grid-template-columns:repeat(3,1fr)!important}.homeServices .serviceCard{min-height:205px}
+
 a[href*="wa.me"]:not(.brandLink){background:#1FA855!important;color:#fff!important;border:2px solid #1FA855!important;display:inline-flex!important;align-items:center;justify-content:center;gap:9px;border-radius:10px!important;box-shadow:0 7px 18px rgba(31,168,85,.20);transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease}
 a[href*="wa.me"]:not(.brandLink):hover{background:#fff!important;border-color:#1FA855!important;color:#158F46!important;transform:translateY(-1px);box-shadow:0 9px 22px rgba(15,45,77,.14)}
 a[href*="wa.me"]:not(.brandLink):focus-visible{outline:3px solid rgba(31,168,85,.28)!important;outline-offset:3px}
@@ -31,8 +33,10 @@ html body .rent .footercta a.btn[href*="wa.me"]::before{
 }
 
 .processSection:has(.process4){padding-top:30px;padding-bottom:33px}
+@media(max-width:900px){.homeServices{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:760px){
   .rentalHighlight{padding:24px 0}.rentalBanner{min-height:0}.rentalPhoto{height:240px}.processSection:has(.process4){padding:38px 0}
   a[href*="wa.me"]:not(.brandLink){min-height:48px}
   html body .rent a.btn[href*="wa.me"]{min-height:48px!important;width:100%!important}
 }
+@media(max-width:520px){.homeServices{grid-template-columns:1fr!important}.homeServices .serviceCard{min-height:0}}

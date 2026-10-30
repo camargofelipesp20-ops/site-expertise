@@ -8,6 +8,7 @@ export default function MobileMenu(){
     <button className="menuBtn" aria-label="Abrir menu" aria-expanded={open} onClick={()=>setOpen(v=>!v)}><span></span><span></span><span></span></button>
     {open&&<div className="menuPanel">
       <Link onClick={()=>setOpen(false)} href="/#solucoes">Soluções</Link>
+      <Link onClick={()=>setOpen(false)} href="/locacao-de-equipamentos">Locação de Equipamentos</Link>
       <Link onClick={()=>setOpen(false)} href="/#como-atuamos">Como atuamos</Link>
       <Link onClick={()=>setOpen(false)} href="/#sobre">Sobre</Link>
       <Link onClick={()=>setOpen(false)} href="/#contato">Contato</Link>

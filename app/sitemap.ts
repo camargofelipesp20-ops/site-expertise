@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import {servicePages} from './servicos/serviceData';
 
 export default function sitemap():MetadataRoute.Sitemap{
   const base='https://expertise-eng.com.br';
@@ -13,6 +14,7 @@ export default function sitemap():MetadataRoute.Sitemap{
   return [
     {url:base,lastModified:now,changeFrequency:'weekly' as const,priority:1},
     {url:`${base}/locacao-de-equipamentos`,lastModified:now,changeFrequency:'weekly' as const,priority:.95},
+    ...servicePages.map(s=>({url:`${base}/servicos/${s.slug}`,lastModified:now,changeFrequency:'monthly' as const,priority:.9})),
     ...categories.map(c=>({url:`${base}/locacao/${c}`,lastModified:now,changeFrequency:'monthly' as const,priority:.85})),
     ...products.map(([c,p])=>({url:`${base}/locacao/${c}/${p}`,lastModified:now,changeFrequency:'monthly' as const,priority:.8})),
     {url:`${base}/monitoramento-e-avaliacao`,lastModified:now,changeFrequency:'monthly' as const,priority:.8},
