@@ -26,7 +26,7 @@ export default function ServiceLanding({data}:{data:ServicePageData}){
           <h1>{data.title} <span>{data.highlight}</span></h1>
           <p>{data.intro}</p>
           <div className="slActions">
-            <a className="slPrimary" href={wa(data.metaTitle)} target="_blank" rel="noreferrer">{data.primaryCta} →</a>
+            <a className="slPrimary" href="#contato-servico">{data.primaryCta} →</a>
             <a className="slWhatsapp" href={wa(data.metaTitle)} target="_blank" rel="noreferrer">Falar com um especialista</a>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function ServiceLanding({data}:{data:ServicePageData}){
 
     <section className="slClients"><div className="slContainer"><div className="slEyebrow blue centered">Empresas onde a Expertise já prestou serviços</div><div className="slClientRow">{clients.map(c=><span key={c}>{c}</span>)}</div></div></section>
 
-    <section className="slFinalCta"><div className="slContainer slFinalGrid"><div><div className="slEyebrow light">Expertise Engenharia</div><h2>Vamos conversar sobre o seu projeto?</h2><p>Nossa equipe técnica pode entender a sua necessidade e indicar o melhor caminho para o seu sistema elétrico.</p></div><a className="slWhatsapp large" href={wa(data.metaTitle)} target="_blank" rel="noreferrer">Falar com um especialista</a></div></section>
+    <section className="slFinalCta" id="contato-servico"><div className="slContainer slFinalGrid"><div><div className="slEyebrow light">Expertise Engenharia</div><h2>Vamos conversar sobre o seu projeto?</h2><p>Nossa equipe técnica pode entender a sua necessidade e indicar o melhor caminho para o seu sistema elétrico.</p></div><a className="slWhatsapp large" href={wa(data.metaTitle)} target="_blank" rel="noreferrer">Falar com um especialista</a></div></section>
 
     <nav className="slRelated" aria-label="Outras soluções"><div className="slContainer"><Link href="/#solucoes">← Voltar para todas as soluções</Link><Link href="/locacao-de-equipamentos">Locação de equipamentos →</Link></div></nav>
   </main>
