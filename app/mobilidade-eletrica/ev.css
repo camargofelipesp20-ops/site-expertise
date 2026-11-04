@@ -1,0 +1,197 @@
+/* Novas páginas de mobilidade elétrica: reutilizam header/footer/logo globais.
+   Todo o estilo é isolado em .evLanding para não alterar as LPs existentes. */
+.evLanding{--evNavy:#082d4e;--evNavy2:#0b416d;--evBlue:#0b8df0;--evInk:#102f4f;--evMuted:#64798e;--evBorder:#e0eaf2;--evSoft:#f4f8fb;--evGreen:#1fa855;color:var(--evInk);background:#fff;font-size:15px}
+.evLanding *{box-sizing:border-box}
+.evLanding a{text-decoration:none}
+.evLanding img{width:100%;height:100%;display:block;object-fit:cover}
+.evLanding .evContainer{width:min(1180px,calc(100% - 72px));margin:auto}
+.evBreadcrumb{background:#f6f9fb;border-bottom:1px solid #e5edf3;color:#6e8498;font-size:12px}
+.evBreadcrumb .evContainer{display:flex;align-items:center;gap:10px;padding:12px 0;flex-wrap:wrap}
+.evBreadcrumb strong{color:#294b66;font-weight:700}
+.evBreadcrumb a:hover{text-decoration:underline}
+.evEyebrow{display:block;color:#0a79cc;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:900;margin-bottom:13px}
+.evEyebrowLight{color:#8ed2ff}
+.evHero{background:linear-gradient(125deg,#062743 0%,#0d426d 100%);color:#fff;overflow:hidden}
+.evHeroGrid{display:grid;grid-template-columns:1.12fr .88fr;align-items:stretch;min-height:525px;gap:42px}
+.evHeroText{padding:67px 0 58px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.evHero h1{max-width:700px;margin:0;font-size:clamp(34px,3.35vw,49px);line-height:1.11;letter-spacing:-.035em;color:#fff;font-weight:850}
+.evHeroText>p{max-width:650px;margin:21px 0 0;font-size:17px;line-height:1.65;color:#e5f1f9}
+.evHeroActions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:29px}
+.evButton{min-height:48px;border-radius:10px;padding:12px 20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:13px;line-height:1.35;text-align:center;border:2px solid transparent;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.evButton:hover{transform:translateY(-1px)}
+.evButtonWhatsApp{background:var(--evGreen);color:#fff;border-color:var(--evGreen)}
+.evButtonGhost{background:transparent;border-color:rgba(255,255,255,.58);color:#fff}
+.evButtonGhost:hover{background:#fff;color:var(--evNavy)}
+.evButtonOutline{background:#fff;border-color:#0c79c8;color:#0c67ab}
+.evButtonOutline:hover{background:#eef8ff}
+.evHeroPromise{font-size:11px;color:#c8deec;line-height:1.5;margin-top:19px;max-width:580px}
+.evHeroImage{position:relative;min-height:490px;margin:0;overflow:hidden;align-self:stretch;background:#1c4362}
+.evHeroImage img{position:absolute;inset:0;object-position:center center}
+.evHeroImage:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,28,48,.55),transparent 47%);pointer-events:none}
+.evHeroImage figcaption{position:absolute;bottom:16px;left:18px;z-index:1;font-size:10px;color:#edf7ff;text-shadow:0 1px 4px #001c32}
+.evHeroImageNote{position:absolute;top:26px;left:24px;right:24px;z-index:1;background:rgba(255,255,255,.96);border-left:4px solid #f47b20;border-radius:9px;padding:16px 18px;box-shadow:0 10px 32px rgba(3,26,45,.23)}
+.evHeroImageNote span{display:block;color:#a44f15;font-size:10px;letter-spacing:.12em;font-weight:900}
+.evHeroImageNote strong{display:block;color:#0f3457;font-size:17px;line-height:1.3;margin-top:5px}
+.evTrustStrip{background:#fff;border-bottom:1px solid var(--evBorder);box-shadow:0 7px 24px rgba(5,40,68,.03)}
+.evTrustGrid{display:grid;grid-template-columns:repeat(4,1fr);padding:20px 0}
+.evTrustGrid>div{padding:4px 20px;border-right:1px solid var(--evBorder)}
+.evTrustGrid>div:first-child{padding-left:0}
+.evTrustGrid>div:last-child{border:0}
+.evTrustGrid strong{display:block;color:var(--evNavy);font-size:17px;margin-bottom:4px}
+.evTrustGrid span{display:block;font-size:12px;color:var(--evMuted);line-height:1.4}
+.evSection{padding:68px 0;scroll-margin-top:78px}
+.evSectionSoft{background:var(--evSoft)}
+.evSectionHeading{max-width:780px;margin:0 auto 30px;text-align:center}
+.evSectionHeading h2,.evSplitHeading h2,.evFeatureSplit h2,.evWhy h2,.evFaqAside h2,.evRelated h2,.evFinal h2{font-size:clamp(27px,2.8vw,37px);line-height:1.13;color:var(--evNavy);margin:0;letter-spacing:-.028em}
+.evSectionHeading p,.evSplitHeading p,.evFeatureSplit p,.evWhy p,.evFaqAside p,.evRelated p{font-size:15px;line-height:1.6;color:var(--evMuted);margin:15px 0 0}
+.evCards{display:grid;gap:17px}
+.evCards4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.evCards3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.evCard{background:#fff;border:1px solid var(--evBorder);box-shadow:0 10px 25px rgba(10,53,89,.04);border-radius:13px;padding:25px 23px 24px;min-width:0}
+.evCardTop{display:flex;justify-content:space-between;align-items:center}
+.evCardIcon{width:50px;height:50px;border-radius:13px;display:grid;place-items:center;background:#eaf6ff;color:#0879ca}
+.evCardIcon svg{width:27px;height:27px}
+.evCardNumber{font-size:11px;color:#9db0c1;font-weight:900}
+.evCard h3{font-size:18px;color:var(--evNavy);line-height:1.22;margin:20px 0 10px}
+.evCard p{font-size:13.5px;color:var(--evMuted);line-height:1.6;margin:0}
+.evSplitHeading{display:grid;grid-template-columns:1.15fr .85fr;align-items:end;gap:45px;margin-bottom:32px}
+.evSplitHeading p{margin:0;padding-bottom:3px}
+.evSteps{list-style:none;counter-reset:ev-step;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+.evStep{position:relative;background:#fff;border:1px solid var(--evBorder);border-radius:12px;padding:24px 21px;min-height:205px}
+.evStepNumber{display:inline-flex;align-items:center;justify-content:center;width:43px;height:43px;border-radius:50%;background:#0c4775;color:#fff;font-weight:850;font-size:13px}
+.evStep h3{font-size:16px;color:var(--evNavy);line-height:1.25;margin:17px 0 9px}
+.evStep p{font-size:12.5px;color:var(--evMuted);line-height:1.55;margin:0}
+.evScopeNote{margin:25px 0 0;border-left:4px solid #f39241;background:#fff7ef;color:#565365;border-radius:0 10px 10px 0;padding:15px 19px;font-size:13px;line-height:1.6}
+.evFeatureSplit{display:grid;grid-template-columns:.94fr 1.06fr;gap:52px;align-items:center;margin-bottom:31px}
+.evFeatureSplit p{max-width:480px}
+.evFeatureImage{height:320px;border-radius:16px;overflow:hidden;box-shadow:0 14px 34px rgba(5,38,66,.15);position:relative;margin:0}
+.evFeatureImage figcaption{position:absolute;right:14px;bottom:10px;color:#fff;font-size:10px;text-shadow:0 2px 5px #08233b}
+.evMidCta{display:flex;align-items:center;justify-content:space-between;gap:22px;background:linear-gradient(110deg,#082d4e,#0b4878);border-radius:15px;color:#fff;margin-top:30px;padding:25px 29px}
+.evMidCta strong,.evMidCta span{display:block}
+.evMidCta strong{font-size:20px;line-height:1.35}
+.evMidCta span{font-size:13px;color:#dceaf4;margin-top:4px}
+.evMidCta .evButton{flex-shrink:0}
+.evWhy{background:#eaf4fa}
+.evWhyGrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:center}
+.evWhy ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:16px 22px}
+.evWhy li{display:flex;gap:10px;align-items:start;font-size:14px;line-height:1.5;color:#2e536d}
+.evWhy li:before{content:'✓';font-weight:900;color:#07945b}
+.evReasonGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.evReason{border:1px solid var(--evBorder);border-radius:14px;overflow:hidden;box-shadow:0 11px 30px rgba(10,50,83,.07);background:#fff}
+.evReasonImage{height:190px;position:relative;overflow:hidden;background:#e7eff5}
+.evReasonImage img{object-position:center}
+.evReasonImage span{position:absolute;left:17px;bottom:14px;border-radius:8px;background:#fff;color:#06436f;padding:7px 12px;font-weight:900}
+.evReasonBody{padding:23px 22px 27px}
+.evReason h3{font-size:20px;line-height:1.25;color:var(--evNavy);margin:0 0 12px}
+.evReason p{font-size:13.5px;line-height:1.55;color:var(--evMuted);margin:0 0 19px}
+.evReason h4{font-size:12px;letter-spacing:.03em;text-transform:uppercase;color:#0a75bf;margin:0 0 12px}
+.evReason ul{list-style:none;margin:0;padding:0}
+.evReason li{display:flex;gap:8px;align-items:flex-start;margin:9px 0;font-size:12.5px;line-height:1.45;color:#294c66}
+.evReason li:before{content:'✓';color:#07945b;font-weight:900}
+.evImageCredit{font-size:10px;color:#8397a8;margin:14px 0 0;text-align:right}
+.evFlow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;gap:15px;margin:34px 0 0;padding:0}
+.evFlow li{position:relative;min-height:135px;border:1px solid var(--evBorder);border-radius:13px;background:#fff;padding:24px 22px}
+.evFlow li:not(:last-child):after{content:'→';position:absolute;right:-15px;top:40%;z-index:2;color:#0a72b8;background:var(--evSoft);padding:4px;font-size:23px}
+.evFlow span{display:block;color:#0a89e5;font-size:13px;font-weight:900;margin-bottom:9px}
+.evFlow strong{font-size:17px;color:var(--evNavy);line-height:1.25}
+.evFaqSection{background:#fff}
+.evFaqLayout{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px;align-items:start}
+.evFaqAside{position:sticky;top:85px}
+.evFaqAside p{margin-bottom:22px}
+.evFaqList{display:grid;gap:10px}
+.evFaq{border:1px solid var(--evBorder);background:#fff;border-radius:12px;overflow:hidden}
+.evFaq[open]{box-shadow:0 8px 24px rgba(10,57,93,.06)}
+.evFaq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:17px 19px;color:#0a3458;font-size:15px;font-weight:800}
+.evFaq summary::-webkit-details-marker{display:none}
+.evFaq summary:focus-visible{outline:3px solid #7ab7ea;outline-offset:-3px}
+.evPlus{display:grid;place-items:center;flex:0 0 29px;width:29px;height:29px;background:#edf6fc;border-radius:50%;color:#1878bd;font-size:20px;font-weight:400}
+.evFaq[open] .evPlus{transform:rotate(45deg)}
+.evFaq p{font-size:13.5px;color:var(--evMuted);line-height:1.6;padding:0 19px 18px;margin:0}
+.evRelated{background:var(--evSoft);padding:34px 0}
+.evRelatedGrid{display:grid;grid-template-columns:1fr auto;gap:35px;align-items:center}
+.evRelated h2{font-size:25px}
+.evRelated .evButton{white-space:nowrap}
+.evFinal{background:linear-gradient(110deg,#062945,#0b466f);padding:63px 0;color:#fff;scroll-margin-top:78px}
+.evFinalGrid{display:grid;grid-template-columns:.93fr 1.07fr;align-items:center;gap:60px}
+.evFinal h2{color:#fff;font-size:clamp(29px,3vw,39px)}
+.evFinalCopy>p{font-size:16px;line-height:1.6;color:#e2eef6;margin:18px 0 25px}
+.evFinalCopy .evFinePrint{font-size:12px;color:#b8d0e1;margin-top:17px}
+.evFormPanel{background:#fff;border-radius:16px;padding:27px;box-shadow:0 19px 55px rgba(1,17,33,.25);color:var(--evInk)}
+.evFormPanel h3{font-size:22px;color:var(--evNavy);margin:0}
+.evFormPanel>p{font-size:12px;line-height:1.5;color:var(--evMuted);margin:8px 0 20px}
+.evFormPanel .leadForm{margin:0;background:none;border:none;box-shadow:none;padding:0}
+.evFormPanel .leadForm .btn{background:#1fa855;color:#fff}
+.evFloating{position:fixed!important;right:22px;bottom:22px;z-index:26;background:#1fa855;color:#fff;border:2px solid #1fa855;border-radius:999px!important;padding:13px 18px;font-size:13px;font-weight:850;min-height:50px;box-shadow:0 8px 30px rgba(3,45,26,.3)!important}
+.evFloating:hover{color:#158f46!important;background:#fff!important}
+@media(max-width:1050px){
+ .evHeroGrid{gap:24px;grid-template-columns:1fr 1fr}
+ .evHero h1{font-size:36px}
+ .evHeroText>p{font-size:15px}
+ .evCards4,.evSteps{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .evReasonGrid{gap:12px}
+ .evReasonBody{padding:20px 17px}
+ .evFaqLayout{gap:36px}
+}
+@media(max-width:760px){
+ .evLanding .evContainer{width:calc(100% - 36px)}
+ .evHeroGrid{grid-template-columns:1fr;gap:0;min-height:0}
+ .evHeroText{padding:45px 0 38px}
+ .evHero h1{font-size:clamp(29px,8vw,39px)}
+ .evHeroText>p{font-size:15px;margin-top:17px}
+ .evHeroImage{min-height:285px;margin:0 -18px}
+ .evHeroImage img{position:absolute}
+ .evTrustGrid{grid-template-columns:1fr 1fr;gap:0}
+ .evTrustGrid>div{padding:14px 12px;border-bottom:1px solid var(--evBorder)}
+ .evTrustGrid>div:nth-child(even){border-right:none}
+ .evTrustGrid>div:nth-last-child(-n+2){border-bottom:0}
+ .evTrustGrid>div:first-child{padding-left:12px}
+ .evSection{padding:45px 0}
+ .evSplitHeading,.evFeatureSplit,.evWhyGrid,.evFaqLayout,.evFinalGrid{grid-template-columns:1fr;gap:23px}
+ .evFeatureImage{height:230px}
+ .evReasonGrid{grid-template-columns:1fr}
+ .evReason{display:grid;grid-template-columns:.39fr .61fr}
+ .evReasonImage{height:100%}
+ .evFlow{grid-template-columns:1fr 1fr}
+ .evFlow li:nth-child(2):after{display:none}
+ .evFlow li{min-height:120px}
+ .evWhy ul{grid-template-columns:1fr 1fr}
+ .evFaqAside{position:static}
+ .evRelatedGrid{grid-template-columns:1fr;gap:20px}
+ .evMidCta{flex-direction:column;align-items:flex-start}
+ .evFinalGrid{gap:33px}
+ .evFormPanel{padding:23px 19px}
+}
+@media(max-width:540px){
+ .evLanding .evContainer{width:calc(100% - 30px)}
+ .evBreadcrumb .evContainer{font-size:10px;gap:6px}
+ .evHeroText{padding:38px 0 31px}
+ .evHero h1{font-size:31px}
+ .evHeroActions{display:grid;grid-template-columns:1fr;width:100%}
+ .evButton{width:100%;min-height:50px}
+ .evHeroPromise{font-size:10.5px}
+ .evHeroImage{min-height:225px;margin:0 -15px}
+ .evHeroImageNote{left:12px;right:12px;top:12px;padding:10px}
+ .evHeroImageNote strong{font-size:13px}
+ .evTrustGrid strong{font-size:14px}
+ .evTrustGrid span{font-size:11px}
+ .evSectionHeading h2,.evSplitHeading h2,.evFeatureSplit h2,.evWhy h2,.evFaqAside h2,.evFinal h2{font-size:27px}
+ .evCards4,.evCards3,.evSteps{grid-template-columns:1fr}
+ .evCard{padding:21px}
+ .evStep{min-height:0;display:grid;grid-template-columns:45px 1fr;gap:13px;padding:17px}
+ .evStep h3{margin:2px 0 7px}
+ .evFeatureImage{height:220px}
+ .evReason{display:block}
+ .evReasonImage{height:190px}
+ .evReasonBody{padding:22px}
+ .evFlow{grid-template-columns:1fr;gap:10px}
+ .evFlow li{min-height:0;padding:17px}
+ .evFlow li:not(:last-child):after{content:'↓';right:auto;left:50%;top:auto;bottom:-21px;padding:0 6px}
+ .evWhy ul{grid-template-columns:1fr}
+ .evFaq summary{font-size:13.5px;padding:14px}
+ .evFaq p{padding:0 14px 16px}
+ .evMidCta{padding:22px}
+ .evMidCta strong{font-size:18px}
+ .evRelated .evButton{white-space:normal}
+ .evFinal{padding:45px 0 70px}
+ .evFloating{right:14px;bottom:13px;left:auto;font-size:12px;padding:11px 13px;min-height:45px}
+}

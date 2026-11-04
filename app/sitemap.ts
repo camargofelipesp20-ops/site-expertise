@@ -14,6 +14,8 @@ export default function sitemap():MetadataRoute.Sitemap{
   return [
     {url:base,lastModified:now,changeFrequency:'weekly' as const,priority:1},
     {url:`${base}/locacao-de-equipamentos`,lastModified:now,changeFrequency:'weekly' as const,priority:.95},
+    {url:`${base}/carregadores-veiculos-eletricos-condominios`,lastModified:now,changeFrequency:'monthly' as const,priority:.92},
+    {url:`${base}/laudo-negado-carregador-veiculo-eletrico`,lastModified:now,changeFrequency:'monthly' as const,priority:.92},
     ...servicePages.map(s=>({url:`${base}/servicos/${s.slug}`,lastModified:now,changeFrequency:'monthly' as const,priority:.9})),
     ...categories.map(c=>({url:`${base}/locacao/${c}`,lastModified:now,changeFrequency:'monthly' as const,priority:.85})),
     ...products.map(([c,p])=>({url:`${base}/locacao/${c}/${p}`,lastModified:now,changeFrequency:'monthly' as const,priority:.8})),
