@@ -16,6 +16,10 @@ export default function LeadForm({service='Engenharia elétrica',button='Enviar 
     const mensagem=String(fd.get('mensagem')||'');
     const text=[`Olá, sou ${nome}. Gostaria de falar sobre ${assunto}.`,empresa&&`Empresa: ${empresa}`,telefone&&`Telefone: ${telefone}`,email&&`E-mail: ${email}`,mensagem&&`Necessidade: ${mensagem}`].filter(Boolean).join('\n');
     setSent(true);
+    // Envia somente o contexto do clique ao GTM, nunca os dados pessoais do formulário.
+    const w=window as Window & {dataLayer?: Array<Record<string,string>>};
+    w.dataLayer=w.dataLayer||[];
+    w.dataLayer.push({event:'whatsapp_click',page_path:window.location.pathname,cta_position:'lead_form',service,channel:'site'});
     window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`,'_blank','noopener,noreferrer');
   }
   return <form className="leadForm" onSubmit={submit}>
