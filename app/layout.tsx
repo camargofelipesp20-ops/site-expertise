@@ -8,6 +8,7 @@ import './rental-hero-fix.css';
 import Logo from './components/Logo';
 import MobileMenu from './components/MobileMenu';
 import RentalCardLinks from './components/RentalCardLinks';
+import WhatsAppClickTracker from './components/WhatsAppClickTracker';
 
 export const metadata: Metadata = {
   metadataBase:new URL('https://expertise-eng.com.br'),
@@ -26,6 +27,7 @@ export default function RootLayout({children}:{children:React.ReactNode}){return
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLXDQ223" height="0" width="0" style={{display:'none',visibility:'hidden'}} title="Google Tag Manager"/></noscript>
 <header className="header"><div className="container headerInner"><Link href="/" className="brandLink"><Logo/></Link><nav className="desktopNav"><Link href="/#solucoes">Soluções</Link><Link href="/locacao-de-equipamentos">Locação de Equipamentos</Link><Link href="/#como-atuamos">Como atuamos</Link><Link href="/#sobre">Sobre</Link><Link href="/#contato">Contato</Link><a className="outlineBtn" href="https://wa.me/5519997988672" target="_blank" rel="noreferrer">Falar pelo WhatsApp</a></nav><MobileMenu/></div></header>
 <RentalCardLinks/>
+<WhatsAppClickTracker/>
 {children}
 <footer className="footer"><div className="container footerInner"><Logo/><p>Engenharia elétrica para operações mais seguras e eficientes.</p><div className="footerMeta"><span>⌖ Campinas - SP</span><span>◫ Atendimento em todo o Estado de SP</span></div><div className="footerSocial"><span>in</span><span>◎</span></div></div><div className="container footerBottom"><span>© 2026 Expertise Engenharia. Todos os direitos reservados.</span><nav><Link href="/#solucoes">Soluções</Link><Link href="/locacao-de-equipamentos">Locação</Link><Link href="/#sobre">Sobre</Link><Link href="/#contato">Contato</Link></nav></div></footer>
 </body></html>}
